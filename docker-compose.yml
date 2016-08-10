@@ -1,0 +1,10 @@
+sdk-php:
+    image: php:5.6-apache
+    volumes:
+        - ./:/var/www/html
+        - ./docker/php-foreground:/usr/local/bin/php-foreground
+    ports:
+        - 8080:80
+    external_links:
+        - spidplatform_web_1:spp.dev
+    command: /usr/local/bin/php-foreground
